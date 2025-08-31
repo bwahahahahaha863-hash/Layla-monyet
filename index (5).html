@@ -1,0 +1,202 @@
+<!-- 
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Selamat Boboo Laylaa - Tema Lotso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg1: #fff0f6;
+      --bg2: #ffe5ef;
+      --pink: #ff4f8b;
+      --lav: #ff7bac;
+      --y: #ffd1dc;
+      --d: #2c1b24;
+      --card: #ffffffdd;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; overflow-x: hidden;
+      font-family: "Poppins", sans-serif;
+      background:
+        radial-gradient(1200px 800px at 10% 10%, var(--bg2), transparent),
+        radial-gradient(1000px 700px at 90% 20%, #fff5fa, transparent),
+        linear-gradient(180deg, var(--bg1), #fff);
+      color: var(--d);
+    }
+    .wrap { min-height: 100%; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .card {
+      position: relative; width: min(860px, 94vw); border-radius: 28px;
+      background: var(--card); box-shadow: 0 20px 60px rgba(255, 120, 170, .25),
+                  0 6px 20px rgba(255, 60, 120, .25); backdrop-filter: blur(6px);
+      overflow: hidden;
+    }
+    .ribbon {
+      position: absolute; inset: 0; pointer-events: none; opacity: .25;
+      background:
+        radial-gradient(400px 140px at -10% -10%, var(--lav), transparent 60%),
+        radial-gradient(500px 180px at 110% 10%, var(--pink), transparent 60%),
+        radial-gradient(700px 200px at 50% 110%, var(--y), transparent 60%);
+      filter: blur(30px); z-index: 0;
+    }
+    header { position: relative; z-index: 1; text-align: center; padding: 36px 20px 16px; }
+    h1 {
+      margin: 0 0 8px; font-family: "Pacifico", cursive;
+      font-size: clamp(28px, 6vw, 56px); color: #d6285f;
+      text-shadow: 0 2px 0 #fff8;
+    }
+    .subtitle { font-weight: 600; font-size: clamp(14px,2.5vw,18px);
+                 opacity: .85; color: #a0164a; }
+    .msg {
+      position: relative; z-index: 1; padding: 16px 22px 28px; text-align: center;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .bubble {
+      display: inline-block; background: #fff; border: 3px dashed #ff9aba;
+      color: #5b2a3d; padding: 16px 18px; border-radius: 18px;
+      font-size: clamp(16px,3.2vw,22px); max-width: 840px; line-height: 1.5;
+      box-shadow: 0 8px 20px rgba(255, 100, 160, .25);
+    }
+    .type {
+      display: inline-block; border-right: 2px solid #ff4f8b;
+      white-space: nowrap; overflow: hidden;
+    }
+    .lotso {
+      position: absolute; bottom: 10px; right: 10px; width: 120px;
+      opacity: 0; animation: fadein 3s ease-in-out infinite alternate;
+      z-index: 2;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(20px) scale(0.8); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .cta {
+      position: relative; z-index: 1; display: flex; gap: 12px;
+      justify-content: center; flex-wrap: wrap; padding: 8px 22px 34px;
+    }
+    .btn {
+      border: none; cursor: pointer; font-weight: 700; padding: 14px 20px;
+      border-radius: 999px; background: linear-gradient(135deg, #ff9acb, #ff4f8b);
+      color: white; font-size: 16px;
+      box-shadow: 0 10px 22px rgba(255, 80, 140, .25);
+      transition: transform .15s, box-shadow .2s, filter .2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 26px rgba(255, 80, 140, .35); }
+    .btn:active { transform: scale(.98); }
+    .tiny { font-size: 12px; opacity: .7; margin-top: 8px; }
+    .hearts {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+    }
+    .heart {
+      position: absolute; font-size: clamp(18px, 3vw, 28px); opacity: .8;
+      animation: floatUp linear forwards; filter: drop-shadow(0 3px 6px rgba(200, 40, 90, .35));
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(20px) scale(.8) rotate(0deg); opacity: 0; }
+      10% { opacity: .95; }
+      100% { transform: translateY(-120vh) scale(1.4) rotate(360deg); opacity: 0; }
+    }
+    footer { position: relative; z-index: 1; text-align: center; padding: 0 18px 26px; color: #a52c61; }
+    .sparkle {
+      position: absolute; width: 8px; height: 8px; border-radius: 50%;
+      opacity: .75; animation: spark 6s linear infinite;
+    }
+    @keyframes spark {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(140vh) scale(.8); opacity: 0; }
+    }
+    @media (max-width: 420px) { .bubble { text-align: left; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="region" aria-label="Kartu ucapan Lotso untuk Laylaa">
+      <div class="ribbon" aria-hidden="true"></div>
+      <header>
+        <h1>Selamat Bobo Laylaa Monyetttt 🧸🌷</h1>
+        <div class="subtitle"></div>
+      </header>
+      <main class="msg">
+        <div class="bubble" aria-live="polite">
+          Selamatt bobooo laylaa cantiii imuppp lucuuu nan menggemaskan, GOOD naittt sweet dreams and sleep well 💤✨
+        </div>
+        <div class="bubble" aria-live="polite">
+          <span class="type" id="type"></span>
+        </div>
+      </main>
+      <img class="lotso" src="https://www.pngplay.com/wp-content/uploads/12/Lotso-PNG-HD-Quality.png" />
+      <div class="cta">
+        <button class="btn" id="hugsBtn">KILIK FOR BOBOO 😴💤</button>
+        <div class="tiny" id="status" aria-live="polite"></div>
+      </div>
+      <div class="hearts" id="hearts" aria-hidden="true"></div>
+    </div>
+  </div>
+<script>
+const text = "SAPRIZAL LOVE ETTY KOES ENDANG";
+const el = document.getElementById('type'); 
+let i = 0;
+function type(){
+  if(i <= text.length){ 
+    el.textContent = text.slice(0, i++);
+    setTimeout(type, 35); 
+  } else { 
+    setTimeout(()=>{ i = 0; type(); }, 3500); 
+  }
+}
+type();
+
+const hearts = document.getElementById('hearts');
+function dropHeart(){
+  const h = document.createElement('div');
+  h.className = 'heart';
+  h.textContent = Math.random() < 0.5 ? '🍓' : '💗';
+  const left = Math.random()*100, dur = 6 + Math.random()*5, delay = Math.random()*5;
+  h.style.left = left + 'vw';
+  h.style.animationDuration = dur + 's';
+  h.style.animationDelay = delay + 's';
+  hearts.appendChild(h);
+  setTimeout(()=> h.remove(), (dur+5)*1000);
+}
+setInterval(dropHeart, 500);
+for(let k = 0; k < 20; k++) dropHeart();
+
+function sparkle(){
+  const s = document.createElement('div');
+  s.className = 'sparkle';
+  const size = 4 + Math.random()*6;
+  s.style.width = size + 'px';
+  s.style.height = size + 'px';
+  s.style.left = Math.random()*100 + 'vw';
+  s.style.top = '-10vh';
+  s.style.background = ['#ffd1e8','#ffe9a3','#ffc6d9','#ffb3cd'][Math.floor(Math.random()*4)];
+  s.style.animationDuration = (7 + Math.random()*6) + 's';
+  s.style.animationDelay = Math.random()*7 + 's';
+  document.body.appendChild(s);
+  setTimeout(()=> s.remove(), 14000);
+}
+setInterval(sparkle, 450);
+for(let j=0; j<24; j++) sparkle();
+
+const btn = document.getElementById('hugsBtn');
+const status = document.getElementById('status');
+let hugs = 0;
+btn.addEventListener('click', () => { 
+  hugs++;
+  status.textContent = `YEAYY BOBOO ${hugs}🤭`;
+  for(let i=0; i<8; i++) setTimeout(dropHeart, i*80);
+});
+</script>
+</body>
+</html>
